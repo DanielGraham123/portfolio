@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/About";
+import Clients from "@/components/Clients";
 import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
 
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <RecentProjects />
+        <Clients />
       </div>
     </main>
   );
