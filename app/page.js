@@ -2,7 +2,9 @@
 
 import About from "@/components/About";
 import Clients from "@/components/Clients";
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
+import Process from "@/components/Process";
 import RecentProjects from "@/components/RecentProjects";
 
 export default function Home() {
@@ -14,6 +16,8 @@ export default function Home() {
         <About />
         <RecentProjects />
         <Clients />
+        <Experience />
+        <Process />
       </div>
     </main>
   );
