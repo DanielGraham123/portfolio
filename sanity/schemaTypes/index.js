@@ -4,8 +4,10 @@ import companies from './companies'
 import company from './company'
 import gallery from './gallery'
 import hero from './hero'
+import process from './process'
 import project from './project'
 import projects from './projects'
+import step from './step'
 import testimonial from './testimonial'
 import testimonials from './testimonials'
 import work from './work'
@@ -24,6 +26,8 @@ export const schema = {
     company,
     companies,
     work,
-    works
+    works,
+    step,
+    process,
   ],
 }

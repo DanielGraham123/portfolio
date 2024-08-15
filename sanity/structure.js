@@ -56,6 +56,7 @@ export const structure = (S) =>
             .documentId('companiesSection')
             .title('Companies Section')
         ),
+
       S.listItem()
         .title('Works')
         .icon(MdOutlineEventNote)
@@ -64,6 +65,16 @@ export const structure = (S) =>
             .schemaType('works')
             .documentId('worksSection')
             .title('Work Experience Section')
+        ),
+
+      S.listItem()
+        .title('Process')
+        .icon(MdOutlineEventNote)
+        .child(
+          S.editor()
+            .schemaType('process')
+            .documentId('processSection')
+            .title('Process Section')
         ),
 
       // // Add a visual divider (optional)
@@ -77,6 +88,7 @@ export const structure = (S) =>
           'projects',
           'testimonials',
           'companies',
-          'works'
+          'works',
+          'process'
         ].includes(listItem.getId()))
     ])
