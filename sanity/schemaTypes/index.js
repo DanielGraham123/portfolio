@@ -8,6 +8,8 @@ import project from './project'
 import projects from './projects'
 import testimonial from './testimonial'
 import testimonials from './testimonials'
+import work from './work'
+import works from './works'
 
 export const schema = {
   types: [
@@ -20,6 +22,8 @@ export const schema = {
     testimonial,
     testimonials,
     company,
-    companies
+    companies,
+    work,
+    works
   ],
 }

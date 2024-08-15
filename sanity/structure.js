@@ -34,7 +34,7 @@ export const structure = (S) =>
           S.editor()
             .schemaType('projects')
             .documentId('projectsSection')
-            .title('Projects Page')
+            .title('Projects Section')
         ),
 
       S.listItem()
@@ -44,7 +44,7 @@ export const structure = (S) =>
           S.editor()
             .schemaType('testimonials')
             .documentId('testimonialsSection')
-            .title('Testimonials Page')
+            .title('Testimonials Section')
         ),
 
       S.listItem()
@@ -54,7 +54,16 @@ export const structure = (S) =>
           S.editor()
             .schemaType('companies')
             .documentId('companiesSection')
-            .title('Companies Page')
+            .title('Companies Section')
+        ),
+      S.listItem()
+        .title('Works')
+        .icon(MdOutlineEventNote)
+        .child(
+          S.editor()
+            .schemaType('works')
+            .documentId('worksSection')
+            .title('Work Experience Section')
         ),
 
       // // Add a visual divider (optional)
@@ -67,6 +76,7 @@ export const structure = (S) =>
           'bento',
           'projects',
           'testimonials',
-          'companies'
+          'companies',
+          'works'
         ].includes(listItem.getId()))
     ])
