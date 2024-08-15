@@ -17,15 +17,15 @@ export const structure = (S) =>
             .title('Hero Section')
         ),
 
-      // S.listItem()
-      //     .title('About Us')
-      //     .icon(FaInfoCircle)
-      //     .child(
-      //         S.editor()
-      //             .schemaType('about')
-      //             .documentId('aboutPage')
-      //             .title('About Page')
-      //     ),
+      S.listItem()
+        .title('Bento Grid')
+        .icon(FaInfoCircle)
+        .child(
+          S.editor()
+            .schemaType('bento')
+            .documentId('bentoGrid')
+            .title('Bento Grid Section')
+        ),
 
       // S.listItem()
       //     .title('Services')
@@ -54,7 +54,7 @@ export const structure = (S) =>
       ...S.documentTypeListItems()
         .filter(listItem => ![
           'hero',
-          //   'about',
+          'bento',
           //   'services',
           //   'events'
         ].includes(listItem.getId()))
