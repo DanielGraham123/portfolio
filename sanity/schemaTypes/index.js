@@ -4,6 +4,8 @@ import gallery from './gallery'
 import hero from './hero'
 import project from './project'
 import projects from './projects'
+import testimonial from './testimonial'
+import testimonials from './testimonials'
 
 export const schema = {
   types: [
@@ -12,6 +14,8 @@ export const schema = {
     bentoCard,
     bentoGrid,
     project,
-    projects
+    projects,
+    testimonial,
+    testimonials
   ],
 }

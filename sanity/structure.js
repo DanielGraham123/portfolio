@@ -37,15 +37,15 @@ export const structure = (S) =>
             .title('Projects Page')
         ),
 
-      // S.listItem()
-      //     .title('Events')
-      //     .icon(MdOutlineEventNote)
-      //     .child(
-      //         S.editor()
-      //             .schemaType('events')
-      //             .documentId('eventsPage')
-      //             .title('Events Page')
-      //     ),
+      S.listItem()
+        .title('Testimonials')
+        .icon(MdOutlineEventNote)
+        .child(
+          S.editor()
+            .schemaType('testimonials')
+            .documentId('testimonialsSection')
+            .title('Testimonials Page')
+        ),
 
       // // Add a visual divider (optional)
       S.divider(),
@@ -56,6 +56,6 @@ export const structure = (S) =>
           'hero',
           'bento',
           'projects',
-          //   'events'
+          'testimonials'
         ].includes(listItem.getId()))
     ])
