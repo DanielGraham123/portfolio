@@ -1,13 +1,61 @@
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
+import { AiOutlineHome } from "react-icons/ai"
+import { MdArticle, MdMiscellaneousServices, MdOutlineEventNote } from "react-icons/md";
+import { FaInfoCircle } from "react-icons/fa";
+
 export const structure = (S) =>
   S.list()
-    .title('Blog')
+    .title('Content')
     .items([
-      S.documentTypeListItem('post').title('Posts'),
-      S.documentTypeListItem('category').title('Categories'),
-      S.documentTypeListItem('author').title('Authors'),
+
+      S.listItem()
+        .title('Hero')
+        .icon(AiOutlineHome)
+        .child(
+          S.editor()
+            .schemaType('hero')
+            .documentId('heroSection')
+            .title('Hero Section')
+        ),
+
+      // S.listItem()
+      //     .title('About Us')
+      //     .icon(FaInfoCircle)
+      //     .child(
+      //         S.editor()
+      //             .schemaType('about')
+      //             .documentId('aboutPage')
+      //             .title('About Page')
+      //     ),
+
+      // S.listItem()
+      //     .title('Services')
+      //     .icon(MdMiscellaneousServices)
+      //     .child(
+      //         S.editor()
+      //             .schemaType('services')
+      //             .documentId('servicesPage')
+      //             .title('Services Page')
+      //     ),
+
+      // S.listItem()
+      //     .title('Events')
+      //     .icon(MdOutlineEventNote)
+      //     .child(
+      //         S.editor()
+      //             .schemaType('events')
+      //             .documentId('eventsPage')
+      //             .title('Events Page')
+      //     ),
+
+      // // Add a visual divider (optional)
       S.divider(),
-      ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author'].includes(item.getId()),
-      ),
+
+      // List out the rest of the document types, but filter out the config type
+      ...S.documentTypeListItems()
+        .filter(listItem => ![
+          'hero',
+          //   'about',
+          //   'services',
+          //   'events'
+        ].includes(listItem.getId()))
     ])
