@@ -1,8 +1,8 @@
 import { defineType } from "sanity";
 
 export default defineType({
-    name: "bentoCard",
-    title: "Bento Card",
+    name: "project",
+    title: "Project",
     type: "object",
     fields: [
         {
@@ -11,33 +11,27 @@ export default defineType({
             required: true,
         },
         {
-            name: "description",
-            rows: 2,
+            name: "des",
             type: "text",
+            rows: 2,
             required: true,
-        },
-        {
-            name: "className",
-            type: "string",
-        },
-        {
-            name: "imgClassName",
-            type: "string",
-        },
-        {
-            name: "titleClassName",
-            type: "string",
         },
         {
             name: "img",
             type: "reference",
             to: [{ type: "gallery" }],
+            required: true,
         },
         {
-            name: "spareImg",
-            type: "reference",
-            to: [{ type: "gallery" }],
-        }
+            name: "iconLists",
+            type: "array",
+            of: [{ type: "image" }],
+        },
+        {
+            name: "link",
+            type: "url",
+            required: true,
+        },
     ],
     preview: {
         select: {

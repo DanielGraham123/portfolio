@@ -27,15 +27,15 @@ export const structure = (S) =>
             .title('Bento Grid Section')
         ),
 
-      // S.listItem()
-      //     .title('Services')
-      //     .icon(MdMiscellaneousServices)
-      //     .child(
-      //         S.editor()
-      //             .schemaType('services')
-      //             .documentId('servicesPage')
-      //             .title('Services Page')
-      //     ),
+      S.listItem()
+        .title('Projects')
+        .icon(MdMiscellaneousServices)
+        .child(
+          S.editor()
+            .schemaType('projects')
+            .documentId('projectsSection')
+            .title('Projects Page')
+        ),
 
       // S.listItem()
       //     .title('Events')
@@ -55,7 +55,7 @@ export const structure = (S) =>
         .filter(listItem => ![
           'hero',
           'bento',
-          //   'services',
+          'projects',
           //   'events'
         ].includes(listItem.getId()))
     ])
