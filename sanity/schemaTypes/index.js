@@ -7,6 +7,7 @@ import hero from './hero'
 import process from './process'
 import project from './project'
 import projects from './projects'
+import socials from './socials'
 import step from './step'
 import testimonial from './testimonial'
 import testimonials from './testimonials'
@@ -29,5 +30,6 @@ export const schema = {
     works,
     step,
     process,
+    socials,
   ],
 }

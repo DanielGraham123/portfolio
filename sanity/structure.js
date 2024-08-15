@@ -77,6 +77,16 @@ export const structure = (S) =>
             .title('Process Section')
         ),
 
+      S.listItem()
+        .title('Socials')
+        .icon(MdArticle)
+        .child(
+          S.editor()
+            .schemaType('socials')
+            .documentId('socials')
+            .title('Social Links')
+        ),
+
       // // Add a visual divider (optional)
       S.divider(),
 
@@ -89,6 +99,7 @@ export const structure = (S) =>
           'testimonials',
           'companies',
           'works',
-          'process'
+          'process',
+          'socials',
         ].includes(listItem.getId()))
     ])
