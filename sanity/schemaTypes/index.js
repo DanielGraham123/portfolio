@@ -1,5 +1,7 @@
 import bentoCard from './bentoCard'
 import bentoGrid from './bentoGrid'
+import companies from './companies'
+import company from './company'
 import gallery from './gallery'
 import hero from './hero'
 import project from './project'
@@ -16,6 +18,8 @@ export const schema = {
     project,
     projects,
     testimonial,
-    testimonials
+    testimonials,
+    company,
+    companies
   ],
 }

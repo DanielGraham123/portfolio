@@ -47,6 +47,16 @@ export const structure = (S) =>
             .title('Testimonials Page')
         ),
 
+      S.listItem()
+        .title('Companies')
+        .icon(MdOutlineEventNote)
+        .child(
+          S.editor()
+            .schemaType('companies')
+            .documentId('companiesSection')
+            .title('Companies Page')
+        ),
+
       // // Add a visual divider (optional)
       S.divider(),
 
@@ -56,6 +66,7 @@ export const structure = (S) =>
           'hero',
           'bento',
           'projects',
-          'testimonials'
+          'testimonials',
+          'companies'
         ].includes(listItem.getId()))
     ])
