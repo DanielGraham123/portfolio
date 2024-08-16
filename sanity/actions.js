@@ -77,3 +77,15 @@ export async function getProcess() {
 
     return data;
 }
+
+export async function getSocials() {
+    const query = `*[_type == "socials"][0] {..., 
+        socials[] {
+            ...,
+            "img": img.asset->url
+        }
+    }`;
+    const data = await sanityClient.fetch(query);
+
+    return data;
+}
