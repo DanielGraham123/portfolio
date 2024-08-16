@@ -55,7 +55,18 @@ export async function getCompanies() {
     }`;
     const data = await sanityClient.fetch(query);
 
-    console.log("companies: ", data);
+    return data;
+}
+
+export async function getWorks() {
+    const query = `*[_type == "works"][0] {...,
+        works[] {
+            ...,
+            "thumbnail": thumbnail.asset->url,
+            "thumbLqip": thumbnail.asset->metadata.lqip
+        }
+    }`;
+    const data = await sanityClient.fetch(query);
 
     return data;
 }

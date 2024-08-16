@@ -1,17 +1,31 @@
 "use client";
 import { workExperience } from "@/data";
-import React from "react";
+import React, { useEffect } from "react";
 import { MBCard } from "./ui/MovingBorder";
+import { useQuery } from "@tanstack/react-query";
+import { getWorks } from "@/sanity/actions";
+import Loading from "@/app/loading";
 
 const Experience = () => {
+  const { data: works, isLoading } = useQuery({
+    queryKey: ["works"],
+    queryFn: getWorks,
+  });
+
+  useEffect(() => {
+    console.log("works", works);
+  }, [works]);
+
+  if (isLoading) return <Loading />;
+
   return (
     <div id="experience" className="py-20 w-full">
       <h1 className="heading">
-        My <span className="text-purple">work experience.</span>
+        {works?.title} <span className="text-purple">{works?.purpleText}</span>
       </h1>
 
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
-        {workExperience.map(({ id, thumbnail, title, desc }, index) => (
+        {works?.works?.map(({ _key: id, thumbnail, title, desc }, index) => (
           <MBCard
             key={id}
             duration={Math.floor(Math.random() * 10000) + 10000}
