@@ -70,3 +70,10 @@ export async function getWorks() {
 
     return data;
 }
+
+export async function getProcess() {
+    const query = `*[_type == "process"][0]`;
+    const data = await sanityClient.fetch(query);
+
+    return data;
+}
