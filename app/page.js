@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Process from "@/components/Process";
 import RecentProjects from "@/components/RecentProjects";
-import { getAbout, getHero, getProjects } from "@/sanity/actions";
+import { getAbout, getCompanies, getHero, getProjects, getTestimonials } from "@/sanity/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 
 export default async function Home() {
@@ -23,6 +23,16 @@ export default async function Home() {
   await queryClient.prefetchQuery({
     queryKey: ["projects"],
     queryFn: getProjects
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["testimonials"],
+    queryFn: getTestimonials
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["companies"],
+    queryFn: getCompanies
   });
 
   return (

@@ -30,7 +30,32 @@ export async function getProjects() {
     }`;
     const data = await sanityClient.fetch(query);
 
-    console.log("Projects", data);
+    return data;
+}
+
+export async function getTestimonials() {
+    const query = `*[_type == "testimonials"][0] {...,
+        testimonials[] {
+            ...,
+            "profile": img->image.asset->url
+        }
+    }`;
+    const data = await sanityClient.fetch(query);
+
+    return data;
+}
+
+export async function getCompanies() {
+    const query = `*[_type == "companies"][0] {...,
+        companies[] {
+            ...,
+            "img": img.asset->url,
+            "nameImg": nameImg.asset->url
+        }
+    }`;
+    const data = await sanityClient.fetch(query);
+
+    console.log("companies: ", data);
 
     return data;
 }
