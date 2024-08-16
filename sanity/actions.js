@@ -17,7 +17,20 @@ export async function getAbout() {
     }`;
     const data = await sanityClient.fetch(query);
 
-    console.log("Bento grid", data);
+    return data;
+}
+
+export async function getProjects() {
+    const query = `*[_type == "projects"][0] {..., 
+        projects[] {
+            ...,
+            "image": img->image.asset->url,
+            "icons": iconLists[].asset->url
+        }
+    }`;
+    const data = await sanityClient.fetch(query);
+
+    console.log("Projects", data);
 
     return data;
 }

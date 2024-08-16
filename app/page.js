@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Process from "@/components/Process";
 import RecentProjects from "@/components/RecentProjects";
-import { getAbout, getHero } from "@/sanity/actions";
+import { getAbout, getHero, getProjects } from "@/sanity/actions";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 
 export default async function Home() {
@@ -18,6 +18,11 @@ export default async function Home() {
   await queryClient.prefetchQuery({
     queryKey: ["bento"],
     queryFn: getAbout
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["projects"],
+    queryFn: getProjects
   });
 
   return (
