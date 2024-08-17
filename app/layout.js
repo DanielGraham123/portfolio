@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 import { Navbar } from "@/components/Navbar";
 import { navItems } from "@/data";
+import QueryProvider from "@/utils/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Navbar navItems={navItems} />
-          {children}
+          <QueryProvider>
+            {children}
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,11 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import GlowingButton from "./ui/GlowingButton";
 import { FaLocationArrow } from "react-icons/fa6";
+import { getHero } from "@/sanity/actions";
+import { useQuery } from "@tanstack/react-query";
+import Loading from "@/app/loading";
 
 const Hero = () => {
+  const { data: heroData, isLoading } = useQuery({
+    queryKey: ["hero"],
+    queryFn: getHero,
+  });
+
+  useEffect(() => {
+    console.log("Hero: ", heroData);
+  }, [heroData]);
+
+  if (isLoading) return <Loading />;
+
   return (
     <div className="pb-20 pt-36">
       <div>
@@ -28,15 +42,14 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            {heroData?.topTitle}
           </p>
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words={heroData?.mainTitle}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
           <p className="text-center md:tracking-wider mb-4 px-16 md:px-5 text-sm md:text-lg lg:text-2xl">
-            Hi there! I'm Daniel, a Full Stack Next.js Developer based in
-            Cameroon.
+            {heroData?.subTitle}
           </p>
           <a href="#about">
             <GlowingButton
