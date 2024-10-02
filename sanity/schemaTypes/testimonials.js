@@ -23,11 +23,11 @@ export default defineType({
             type: "array",
             of: [{ type: "testimonial" }],
             required: true,
-            initialValue: () => testimonials.map((testimonial) => ({
-                name: testimonial.name,
-                title: testimonial.title,
-                quote: testimonial.quote,
-            })),
+            // initialValue: () => testimonials.map((testimonial) => ({
+            //     name: testimonial.name,
+            //     title: testimonial.title,
+            //     quote: testimonial.quote,
+            // })),
         }
 
     ],
