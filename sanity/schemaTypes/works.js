@@ -23,11 +23,11 @@ export default defineType({
             type: "array",
             of: [{ type: "work" }],
             required: true,
-            initialValue: () => workExperience.map((work) => ({
-                title: work.title,
-                desc: work.desc,
-                className: work.className,
-            })),
+            // initialValue: () => workExperience.map((work) => ({
+            //     title: work.title,
+            //     desc: work.desc,
+            //     className: work.className,
+            // })),
         }
     ],
 });

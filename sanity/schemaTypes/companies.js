@@ -17,9 +17,9 @@ export default defineType({
             type: "array",
             of: [{ type: "company" }],
             required: true,
-            initialValue: () => companies.map((company) => ({
-                name: company.name,
-            })),
+            // initialValue: () => companies.map((company) => ({
+            //     name: company.name,
+            // })),
         }
     ],
 });
