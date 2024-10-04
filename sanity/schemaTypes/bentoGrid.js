@@ -17,13 +17,13 @@ export default defineType({
             type: "array",
             of: [{ type: "bentoCard" }],
             required: true,
-            initialValue: () => gridItems.map((item) => ({
-                title: item.title,
-                description: item.description,
-                className: item.className,
-                imgClassName: item.imgClassName,
-                titleClassName: item.titleClassName,
-            })),
+            // initialValue: () => gridItems.map((item) => ({
+            //     title: item.title,
+            //     description: item.description,
+            //     className: item.className,
+            //     imgClassName: item.imgClassName,
+            //     titleClassName: item.titleClassName,
+            // })),
         }
 
     ],

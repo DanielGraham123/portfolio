@@ -23,22 +23,22 @@ export default defineType({
             type: "array",
             of: [{ type: "project" }],
             required: true,
-            initialValue: () => projects.map((project) => ({
-                title: project.title,
-                des: project.des,
-                // img: {
-                //     _type: "reference",
-                //     _ref: project.img,
-                // },
-                // iconLists: project.iconLists.map((icon) => ({
-                //     _type: "image",
-                //     asset: {
-                //         _type: "reference",
-                //         _ref: icon,
-                //     },
-                // })),
-                link: project.link,
-            })),
+            // initialValue: () => projects.map((project) => ({
+            //     title: project.title,
+            //     des: project.des,
+            // img: {
+            //     _type: "reference",
+            //     _ref: project.img,
+            // },
+            // iconLists: project.iconLists.map((icon) => ({
+            //     _type: "image",
+            //     asset: {
+            //         _type: "reference",
+            //         _ref: icon,
+            //     },
+            // })),
+            //     link: project.link,
+            // })),
         }
 
     ],
