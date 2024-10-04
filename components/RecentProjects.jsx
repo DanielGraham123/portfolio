@@ -7,6 +7,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import { getProjects } from "@/sanity/actions";
 import Loading from "@/app/loading";
+import { Link } from "next/link";
 
 const RecentProjects = () => {
   const { data: projectsData, isLoading } = useQuery({
@@ -78,12 +79,16 @@ const RecentProjects = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-center items-center">
+                  <Link
+                    href={link}
+                    target="_blank"
+                    className="flex justify-center items-center"
+                  >
                     <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                       Check Live Site
                     </p>
                     <FaLocationArrow className="ms-3" color="#CBACF9" />
-                  </div>
+                  </Link>
                 </div>
               </PinCard>
             </div>
