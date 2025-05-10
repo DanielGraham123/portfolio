@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import GlowingButton from "./ui/GlowingButton";
 import { FaLocationArrow } from "react-icons/fa6";
-
+import Link from "next/link";
 const Contact = () => {
   return (
     <div className="flex flex-col items-center">
@@ -13,13 +15,13 @@ const Contact = () => {
         Reach out to me today and let&apos;s discuss how I can help you achieve
         your goals.
       </p>
-      <a href="mailto:boazdanielgraham@gmail.com">
+      <Link href="mailto:boazdanielgraham@gmail.com">
         <GlowingButton
           title="Let's get in touch"
           icon={<FaLocationArrow />}
           position="right"
         />
-      </a>
+      </Link>
     </div>
   );
 };

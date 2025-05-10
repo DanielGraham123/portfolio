@@ -8,7 +8,7 @@ const GlowingButton = ({
   otherClasses,
 }) => {
   return (
-    <button
+    <div
       className="relative inline-flex h-12 overflow-hidden rounded-lg p-[1px] focus:outline-none"
       onClick={handleClick}
     >
@@ -20,7 +20,7 @@ const GlowingButton = ({
         {title}
         {position === "right" && icon}
       </span>
-    </button>
+    </div>
   );
 };
 
