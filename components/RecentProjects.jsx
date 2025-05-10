@@ -7,7 +7,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import { getProjects } from "@/sanity/actions";
 import Loading from "@/app/loading";
-import { Link } from "next/link";
+import Link from "next/link";
 
 const RecentProjects = () => {
   const { data: projectsData, isLoading } = useQuery({
